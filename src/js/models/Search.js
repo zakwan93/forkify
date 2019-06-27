@@ -6,7 +6,7 @@ export default class Search{
     }
 
     async getResults() {
-        const key = 'fe708b01fc01fd9a0d26b430d3610e1f';
+        // const key = 'fe708b01fc01fd9a0d26b430d3610e1f';
         const cors = "https://cors-anywhere.herokuapp.com/";
         const appKey = "3a6436002c282fc8588b642a80b2a7d9";
         const appId = "be59fb15";
