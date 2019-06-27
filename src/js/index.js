@@ -1,4 +1,5 @@
 import Search from "./models/Search";
+import Recipe from './models/Recipe';
 import * as searchView from './views/SearchView';
 import {elements, renderLoader, clearLoader} from  "./views/base";
 
@@ -11,6 +12,8 @@ Gloabal State of the App
 */
 
 const state = {};
+
+// **** Search Controller ****
 
 const controlSearch = async () => {
 
@@ -32,7 +35,7 @@ const controlSearch = async () => {
         await state.search.getResults();
 
         //5. render results on UI
-        // console.log(state.search.result);
+        console.log(state.search.result);
         clearLoader();
         searchView.renderResults(state.search.result);
     }
@@ -57,6 +60,13 @@ elements.searchResPages.addEventListener("click", e => {
 });
 
 
+// ********************
+    // Recipe Controller
+// ********************
+
+const r = new Recipe(46956);
+r.getRecipe();
+console.log(r);
 
 
 

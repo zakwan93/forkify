@@ -28,22 +28,37 @@ const limitRecipeTitle = (title, limit = 17) => {
 
 const renderRecipe = recipe => { 
 
+    // console.log(recipe);
     const recipeInside = recipe.recipe;
     // console.log(recipeInside);
 
     const markup = `
         <li>
-            <a class="results__link" href=${recipeInside.calories}>
+            <a class="results__link" href=${recipe.recipe.id}>
                 <figure class="results__fig">
-                    <img src=${recipeInside.image} alt=${recipeInside.label}>
+                    <img src=${recipe.image_url} alt=${recipe.title}>
                 </figure>
                 <div class="results__data">
-                    <h4 class="results__name">${limitRecipeTitle(recipeInside.label)}</h4>
-                    <p class="results__author">${recipeInside.source}</p>
+                    <h4 class="results__name">${limitRecipeTitle(recipe.title)}</h4>
+                    <p class="results__author">${recipe.publisher}</p>
                 </div>
             </a>
         </li>
     `;
+
+    // const markup = `
+    //     <li>
+    //         <a class="results__link" href=${recipeInside.calories}>
+    //             <figure class="results__fig">
+    //                 <img src=${recipeInside.image} alt=${recipeInside.label}>
+    //             </figure>
+    //             <div class="results__data">
+    //                 <h4 class="results__name">${limitRecipeTitle(recipeInside.label)}</h4>
+    //                 <p class="results__author">${recipeInside.source}</p>
+    //             </div>
+    //         </a>
+    //     </li>
+    // `;
     // console.log(recipe);
     elements.searchResultList.insertAdjacentHTML("beforeend", markup);
 }
